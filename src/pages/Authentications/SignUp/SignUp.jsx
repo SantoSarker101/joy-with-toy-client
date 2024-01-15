@@ -1,11 +1,11 @@
 import React from 'react';
 import Lottie from "lottie-react";
-import log from '../../../assets/animation/log.json'
+import signup from '../../../assets/animation/signup.json'
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const SignUp = () => {
 
-	const handleLogin = event => {
+	const handleSignUp = event => {
 		event.preventDefault();
 	}
 
@@ -15,16 +15,27 @@ const Login = () => {
 		<div className="hero-content flex-col lg:flex-row-reverse lg:justify-between">
 
 			<div className="w-1/2 md:ml-16">
-			<Lottie className='md:w-96 w-56' animationData={log} loop={true} />
+			<Lottie className='md:w-96 w-56' animationData={signup} loop={true} />
 			</div>
 
 
 
 		<div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
-			<form onSubmit={handleLogin} className="card-body">
+			<form onSubmit={handleSignUp} className="card-body">
 
-			<h1 className="text-3xl font-bold">Login now!</h1>
+			<h1 className="text-3xl font-bold">Create Your Account</h1>
+
+				<div className="form-control">
+
+				<label className="label">
+					<span className="label-text">Your Name</span>
+				</label>
+
+				<input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
+
+				</div>
+
 
 				<div className="form-control">
 
@@ -35,6 +46,7 @@ const Login = () => {
 				<input type="email" name='email' placeholder="email" className="input input-bordered" required />
 
 				</div>
+
 
 				<div className="form-control">
 
@@ -51,13 +63,24 @@ const Login = () => {
 				</div>
 
 
+				<div className="form-control">
+
+				<label className="label">
+					<span className="label-text">Photo URL</span>
+				</label>
+
+				<input type="text" name='photo' placeholder="Photo URL" className="input input-bordered" required />
+
+				</div>
+
+
 				<div className="form-control mt-6">
-					<input type="submit" className="btn btn-primary text-2xl" value='Login' />
+					<input type="submit" className="btn btn-primary text-2xl" value='Sign Up' />
 				</div>
 
 			</form>
 
-			<p className='mb-6 text-center'>New to Joy with Toy? Please <Link className='text-orange-600 font-extrabold' to='/signup'>Sign Up</Link></p>
+			<p className='mb-6 text-center'>Already Have an Account? Please <Link className='text-orange-600 font-extrabold' to='/login'>Login</Link></p>
 
 			</div>
 
@@ -67,4 +90,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default SignUp;
