@@ -24,22 +24,22 @@ const Gallery = () => {
 
 			<div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
 
-				<img src={img1} alt="" />
-				<img src={img2} alt="" />
-				<img src={img3} alt="" />
-				<img src={img4} alt="" />
-				<img src={img5} alt="" />
-				<img src={img6} alt="" />
-				<img src={img7} alt="" />
-				<img src={img8} alt="" />
-				<img src={img9} alt="" />
-				<img src={img10} alt="" />
-				<img src={img11} alt="" />
-				<img src={img12} alt="" />
-				<img src={img13} alt="" />
-				<img src={img14} alt="" />
-				<img src={img15} alt="" />
-				<img src={img16} alt="" />
+				<img className='w-full' src={img1} alt="" />
+				<img className='w-full' src={img2} alt="" />
+				<img className='w-full' src={img3} alt="" />
+				<img className='w-full' src={img4} alt="" />
+				<img className='w-full' src={img5} alt="" />
+				<img className='w-full' src={img6} alt="" />
+				<img className='w-full' src={img7} alt="" />
+				<img className='w-full' src={img8} alt="" />
+				<img className='w-full' src={img9} alt="" />
+				<img className='w-full' src={img10} alt="" />
+				<img className='w-full' src={img11} alt="" />
+				<img className='w-full' src={img12} alt="" />
+				<img className='w-full' src={img13} alt="" />
+				<img className='w-full' src={img14} alt="" />
+				<img className='w-full' src={img15} alt="" />
+				<img className='w-full' src={img16} alt="" />
 
 			</div>
 		</>
