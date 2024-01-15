@@ -9,7 +9,7 @@ const Main = () => {
 		<div>
 
 		<div>
-			<div className='mx-auto mb-3'>
+			<div className='mx-auto'>
 				<div className="bg-red-500 flex mx-auto w-full text-center text-white font-bold py-1 px-3">
 					<p>Get $5 to Spend </p>
 					<span className='ml-3'><FaArrowRight/></span>
