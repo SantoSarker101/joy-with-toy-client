@@ -1,16 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from "lottie-react";
 import signup from '../../../assets/animation/signup.json'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
 
+	const {createUser} = useContext(AuthContext)
+
 	const handleSignUp = event => {
 		event.preventDefault();
+		const form = event.target;
+		const name = form.name.value;
+		const email = form.email.value;
+		const password = form.password.value;
+		const photo = form.photo.value;
+		console.log(name,email,password,photo);
+
+		createUser(email, password)
+		.then(result => {
+			const user = result.user;
+			console.log(user);
+			updateUserData(user,name,photo)
+		})
+		.catch(error => console.log(error))
+	}
+
+	const updateUserData = (user,name,photo) => {
+		updateProfile(user,{
+			displayName: name,
+			photoURL: photo
+		})
+		.then(() => {
+			console.log('User name Updated');
+		})
+		.catch(error => {
+			console.log(error);
+		})
 	}
 
 	return (
-		<div className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-20% via-sky-500 via-40% to-emerald-500 to-90% hover:from-pink-500 hover:to-yellow-500 ...">
+		<div className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-20% via-sky-500 via-40% to-emerald-500 to-90%">
 
 		<div className="hero-content flex-col lg:flex-row-reverse lg:justify-between">
 
@@ -69,7 +100,7 @@ const SignUp = () => {
 					<span className="label-text">Photo URL</span>
 				</label>
 
-				<input type="text" name='photo' placeholder="Photo URL" className="input input-bordered" required />
+				<input type="text" name='photo' placeholder="Photo URL" className="input input-bordered" />
 
 				</div>
 
