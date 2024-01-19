@@ -1,7 +1,7 @@
 
 const AllToys = () => {
 	return (
-		<div className="h-screen bg-gradient-to-r from-lime-800 from-10% to-yellow-600 to-90% text-white font-bold">
+		<div className="h-screen bg-gradient-to-r from-fuchsia-800 from-10% to-cyan-800 to-90% text-white font-bold">
 			<h1>Hello</h1>
 		</div>
 	);
