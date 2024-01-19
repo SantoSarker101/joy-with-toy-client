@@ -106,7 +106,7 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='text' name='sellerName' defaultValue={user && user?.displayName} className="input input-bordered join-item w-full" placeholder="Seller Name"/>
+						<input type='text' name='sellerName' value={user && user?.displayName} className="input input-bordered join-item w-full" placeholder="Seller Name"/>
 
 					</label>
 
@@ -121,7 +121,7 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='email' name='email' defaultValue={user && user?.email} className="input input-bordered join-item w-full" placeholder="Seller Email"/>
+						<input type='email' name='email' value={user && user?.email} className="input input-bordered join-item w-full" placeholder="Seller Email"/>
 
 					</label>
 
