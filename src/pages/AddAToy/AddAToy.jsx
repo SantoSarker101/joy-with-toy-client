@@ -1,13 +1,18 @@
-import React from 'react';
+
+import { useContext } from 'react';
+import Swal from 'sweetalert2'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const AddAToy = () => {
+
+	const {user} = useContext(AuthContext);
 
 	const handleAddToyInformation = event => {
 		event.preventDefault();
 		const form = event.target;
 
 		const toyPhoto = form.toyPhoto.value;
-		const toyname = form.toyname.value;
+		const toyName = form.toyName.value;
 		const sellerName = form.sellerName.value;
 		const email = form.email.value;
 		const subCategory = form.subCategory.value;
@@ -16,7 +21,30 @@ const AddAToy = () => {
 		const availableQuantity = form.availableQuantity.value;
 		const detailsDescription = form.detailsDescription.value;
 
-		console.log(toyPhoto,toyname,sellerName,email,subCategory,price,rating,availableQuantity,detailsDescription);
+		const ToysInfo = {toyPhoto,toyName,sellerName,email,subCategory,price,rating,availableQuantity,detailsDescription}
+
+		console.log(ToysInfo);
+
+		// Send data to the Server
+		fetch('http://localhost:5000/toysInfo',{
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(ToysInfo)
+		})
+		.then(res => res.json())
+		.then(data => {
+			console.log(data);
+			if(data.insertedId){
+				Swal.fire({
+					title: 'Success!',
+					text: 'Toy Information Added Successfully',
+					icon: 'success',
+					confirmButtonText: 'Cool'
+				})
+			}
+		})
 
 	}
 	return (
@@ -54,7 +82,7 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='text' name='toyname' className="input input-bordered join-item w-full" placeholder="Toy Name"/>
+						<input type='text' name='toyName' className="input input-bordered join-item w-full" placeholder="Toy Name"/>
 
 					</label>
 
@@ -78,7 +106,7 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='text' name='sellerName' className="input input-bordered join-item w-full" placeholder="Seller Name"/>
+						<input type='text' name='sellerName' defaultValue={user && user?.displayName} className="input input-bordered join-item w-full" placeholder="Seller Name"/>
 
 					</label>
 
@@ -93,7 +121,7 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='email' name='email' className="input input-bordered join-item w-full" placeholder="Seller Email"/>
+						<input type='email' name='email' defaultValue={user && user?.email} className="input input-bordered join-item w-full" placeholder="Seller Email"/>
 
 					</label>
 
@@ -115,9 +143,20 @@ const AddAToy = () => {
 						<span className='label-text text-yellow-200 font-extrabold'>Sub-Category</span>
 					</label>
 
-					<label>
+					<label className=''>
 
-						<input type='text' name='subCategory' className="input input-bordered join-item w-full" placeholder="Sub-Category"/>
+					<select className="select w-full text-base" name='subCategory' defaultValue='select a sub-category' >
+
+						<option disabled value='select a sub-category'>select a sub-category</option>
+
+						<option value='Regular Car'>Regular Car</option>
+
+						<option value='Truck'>Truck</option>
+
+						<option value='Mini Police Car'>Mini Police Car</option>
+
+					</select>
+
 
 					</label>
 
@@ -187,7 +226,7 @@ const AddAToy = () => {
 				<div className='mb-16'>
 
 
-				<div className="form-control md:w-full">
+				<div className="form-control  md:w-1/2 ">
 
 					<label className='label'>
 						<span className='label-text text-yellow-200 font-extrabold'>Detail description</span>
@@ -195,7 +234,10 @@ const AddAToy = () => {
 
 					<label>
 
-						<input type='text' name='detailsDescription' className="input input-bordered join-item w-full" placeholder="Detail description"/>
+
+					<textarea type='textarea' name='detailsDescription' placeholder="Detail description" className="textarea textarea-primary w-full">
+
+					</textarea>
 
 					</label>
 

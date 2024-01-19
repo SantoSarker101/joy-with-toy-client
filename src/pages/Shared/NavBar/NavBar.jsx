@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
-import { Result } from "postcss";
+// import { Result } from "postcss";
 
 const NavBar = () => {
 	const {user,logOut} = useContext(AuthContext);
@@ -38,16 +38,24 @@ const NavBar = () => {
 				All Toys
 			</NavLink>
 		</li>
-		<li>
-			<NavLink to='/MyToy' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
-				My Toy
+
+		{
+			user?.email && <>
+
+			<li>
+			<NavLink to='/MyToys' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
+				My Toys
 			</NavLink>
-		</li>
-		<li>
-			<NavLink to='/AddAToy' className={({isActive}) => (isActive ? 'text-fuchsia-500 font-extrabold' : '')}>
-				Add A Toy
-			</NavLink>
-		</li>
+			</li>
+			<li>
+				<NavLink to='/AddAToy' className={({isActive}) => (isActive ? 'text-fuchsia-500 font-extrabold' : '')}>
+					Add A Toy
+				</NavLink>
+			</li>
+
+		</>
+		}
+
 		<li>
 			<NavLink to='/Blogs' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
 				Blogs
@@ -72,22 +80,30 @@ const NavBar = () => {
 		</li>
 
 		<li>
-			<NavLink to='/AllToys' className={({isActive}) => isActive ? 'text-fuchsia-500' : ''}>
+			<NavLink to='/AllToys' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
 				All Toys
 			</NavLink>
 		</li>
-		<li>
-			<NavLink to='/MyToy' className={({isActive}) => isActive ? 'text-fuchsia-500' : ''}>
-				My Toy
+
+		{
+			user?.email && <>
+
+			<li>
+			<NavLink to='/MyToys' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
+				My Toys
 			</NavLink>
-		</li>
+			</li>
+			<li>
+				<NavLink to='/AddAToy' className={({isActive}) => (isActive ? 'text-fuchsia-500 font-extrabold' : '')}>
+					Add A Toy
+				</NavLink>
+			</li>
+
+		</>
+		}
+
 		<li>
-			<NavLink to='/AddAToy' className={({isActive}) => (isActive ? 'text-fuchsia-500' : '')}>
-				Add A Toy
-			</NavLink>
-		</li>
-		<li>
-			<NavLink to='/Blogs' className={({isActive}) => isActive ? 'text-fuchsia-500' : ''}>
+			<NavLink to='/Blogs' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
 				Blogs
 			</NavLink>
 		</li>
