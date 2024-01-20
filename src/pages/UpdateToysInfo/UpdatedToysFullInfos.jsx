@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const UpdatedToysFullInfos = ({updateToy}) => {
 	const {user} = useContext(AuthContext);
 
-	const {toyPhoto,toyName,sellerName,email,subCategory,price,rating,availableQuantity,detailsDescription,_id} = updateToy
+	const {toyPhoto,toyName,subCategory,price,rating,availableQuantity,detailsDescription,_id} = updateToy
 
 
 	const handleUpdateToyInformation = event => {
