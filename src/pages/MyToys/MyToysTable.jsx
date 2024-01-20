@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToysTable = ({myToy,myToys,setMyToys}) => {
@@ -75,7 +76,7 @@ const MyToysTable = ({myToy,myToys,setMyToys}) => {
         <td>{detailsDescription}</td>
 
         <td>
-		<button className="btn btn-outline border-gray-50 border-dashed text-white border-2">Update</button>
+          <Link to={`/UpdateToysInfo/${_id}`}><button className="btn btn-outline border-gray-50 border-dashed text-white border-2">Update</button></Link>
         </td>
 
         <td>

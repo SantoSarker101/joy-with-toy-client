@@ -48,7 +48,7 @@ const AddAToy = () => {
 
 	}
 	return (
-		<div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-12 lg:p-20'>
+		<div className='bg-gradient-to-r from-lime-950 to-purple-900 p-12 lg:p-20'>
 			<h2 className='text-3xl font-extrabold text-white text-center mb-10'>Add a Toy</h2>
 
 			<form onSubmit={handleAddToyInformation}>
