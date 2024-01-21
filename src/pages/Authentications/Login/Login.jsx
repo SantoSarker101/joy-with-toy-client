@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react';
 import Lottie from "lottie-react";
 import log from '../../../assets/animation/log.json'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -12,6 +12,11 @@ const Login = () => {
 	const {signIn,googlePop,passwordReset} = useContext(AuthContext)
 	const emailRef = useRef();
 
+	const navigate = useNavigate();
+	const location = useLocation();
+	console.log('Login Page Location', location);
+	const from = location?.state?.from?.pathname || '/';
+
 	const googleProvider = new GoogleAuthProvider()
 
 	const handleGoogleSignIn = () => {
@@ -19,6 +24,7 @@ const Login = () => {
 		.then(result => {
 			const user = result.user;
 			console.log(user);
+			navigate(from, {replace: true})
 		})
 		.catch(error => {
 			console.log(error);
@@ -36,6 +42,7 @@ const Login = () => {
 		.then(result => {
 			const user = result.user;
 			console.log(user);
+			navigate(from, {replace: true})
 		})
 		.catch(error => console.log(error));
 	}

@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Lottie from "lottie-react";
 import signup from '../../../assets/animation/signup.json'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
 
 	const {createUser} = useContext(AuthContext)
+	const [show,setShow] = useState(false);
+	const navigate = useNavigate();
 
 	const handleSignUp = event => {
 		event.preventDefault();
@@ -22,6 +24,7 @@ const SignUp = () => {
 		.then(result => {
 			const user = result.user;
 			console.log(user);
+			navigate('/');
 			updateUserData(user,name,photo)
 		})
 		.catch(error => console.log(error))
@@ -41,7 +44,7 @@ const SignUp = () => {
 	}
 
 	return (
-		<div className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-20% via-sky-500 via-40% to-emerald-500 to-90%">
+		<div className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-40% to-emerald-500 to-90%">
 
 		<div className="hero-content flex-col lg:flex-row-reverse lg:justify-between">
 
@@ -85,11 +88,13 @@ const SignUp = () => {
 					<span className="label-text">Password</span>
 				</label>
 
-				<input type="password" name='password' placeholder="password" className="input input-bordered" required />
+				<input type={show ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
 
-				<label className="label">
-					<a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-				</label>
+				<p><small onClick={() => setShow(!show)} className='cursor-pointer'>
+					{
+						show ? <span>Hide Password</span> : <span>Show Password</span>
+					}
+				</small></p>
 
 				</div>
 
