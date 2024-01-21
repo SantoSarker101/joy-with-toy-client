@@ -62,8 +62,7 @@ const router = createBrowserRouter([
 		},
 		{
 			path: 'BuyNow',
-			element: <BuyNow></BuyNow>,
-			loader: () => fetch('http://localhost:5000/BuyToysInfo')
+			element: <BuyNow></BuyNow>
 		}
 
 	]

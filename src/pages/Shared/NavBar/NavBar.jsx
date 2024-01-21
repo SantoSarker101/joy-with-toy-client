@@ -43,6 +43,12 @@ const NavBar = () => {
 			user?.email && <>
 
 			<li>
+				<NavLink to='/BuyNow' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
+					Selected Toys For Buy
+				</NavLink>
+			</li>
+
+			<li>
 			<NavLink to='/MyToys' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
 				My Toys
 			</NavLink>
@@ -90,7 +96,7 @@ const NavBar = () => {
 
 			<li>
 			<NavLink to='/BuyNow' className={({isActive}) => isActive ? 'text-fuchsia-500 font-extrabold' : ''}>
-				Buy Toys
+				Selected Toys For Buy
 			</NavLink>
 			</li>
 

@@ -50,7 +50,7 @@ const ViewDetailsCard = ({ViewDetailsData}) => {
 						<span>{rating}</span>
 						<Rating style={{ maxWidth: 150 }} value={rating} readOnly />
 				</div>
-				
+
 				<p className="py-4"> Available Quantity: {availableQuantity}</p>
 				<p className="py-4">Details Description: {detailsDescription}</p>
 
