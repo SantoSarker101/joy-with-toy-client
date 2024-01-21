@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ShopBySubCategoryCard from "./ShopBySubCategoryCard";
 
+
 const ShopBySubCategory = () => {
 	const [toys, setToys] = useState([]);
 	const [activeTab, setActiveTab] = useState('RegularCar')
@@ -12,7 +13,7 @@ const ShopBySubCategory = () => {
 			setToys(result);
 		})
 
-	},[])
+	},[activeTab])
 
 
 	// const result = toys?.filter((toy) => toy.subCategory == activeTab);
@@ -36,9 +37,10 @@ const ShopBySubCategory = () => {
 					Truck
 				</button>
 
-				<button onClick={() => handleTabClick('MiniPoliceCar')} className={`tab tab3 btn ${activeTab == 'MiniPoliceCar' ? 'bg-orange-800 text-white font-extrabold' : ''}`}>
+				<button onClick={() => handleTabClick('MiniPoliceCar')} className={`tab tab3 btn ${activeTab == 'MiniPoliceCar' ? 'bg-orange-800 text-white font-extrabold' : '' }`}>
 					Mini Police Car
 				</button>
+
 
 			</div>
 

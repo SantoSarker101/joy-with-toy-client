@@ -3,6 +3,7 @@ import AllToysTable from "./AllToysTable";
 
 const AllToys = () => {
 	const [AllToys, setAllToys] = useState([]);
+	const [seachText, setSearchText] = useState('')
 
 	const url = `http://localhost:5000/toysInfos`;
 
@@ -17,6 +18,14 @@ const AllToys = () => {
 
 
 		<h1 className="text-center pt-12 mb-8 text-3xl">All Toys</h1>
+
+		<div className="join flex justify-center mb-10">
+
+		<input onChange={(e) => setSearchText(e.target.value)} type="text" className="input input-bordered join-item text-black" placeholder="Search Toy name"/>
+
+		<button className="btn join-item rounded-r-full font-extrabold">Search</button>
+
+		</div>
 
 		<div className="overflow-x-auto">
 			<table className="table">
