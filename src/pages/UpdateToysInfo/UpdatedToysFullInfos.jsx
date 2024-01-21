@@ -154,11 +154,11 @@ const UpdatedToysFullInfos = ({updateToy}) => {
 
 					<option disabled value='select a sub-category'>select a sub-category</option>
 
-					<option value='Regular Car'>Regular Car</option>
+					<option value='RegularCar'>Regular Car</option>
 
 					<option value='Truck'>Truck</option>
 
-					<option value='Mini Police Car'>Mini Police Car</option>
+					<option value='MiniPoliceCar'>Mini Police Car</option>
 
 				</select>
 

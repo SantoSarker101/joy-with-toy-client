@@ -10,6 +10,8 @@ import AllToys from "../pages/AllToys/AllToys";
 import Blogs from "../pages/Blogs/Blogs";
 import UpdateToysInfo from "../pages/UpdateToysInfo/UpdateToysInfo";
 import ShopBySubCategory from "../pages/Home/ShopBySubCategory/ShopBySubCategory";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
+import BuyNow from "../pages/BuyNow/BuyNow";
 
 const router = createBrowserRouter([
 	{
@@ -52,6 +54,16 @@ const router = createBrowserRouter([
 		{
 			path: 'ShopBySubCategory',
 			element: <ShopBySubCategory></ShopBySubCategory>
+		},
+		{
+			path: 'ViewDetails/:id',
+			element: <ViewDetails></ViewDetails>,
+			loader: ({params}) => fetch(`http://localhost:5000/toysInfos/${params.id}`)
+		},
+		{
+			path: 'BuyNow',
+			element: <BuyNow></BuyNow>,
+			loader: () => fetch('http://localhost:5000/BuyToysInfo')
 		}
 
 	]

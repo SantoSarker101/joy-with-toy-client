@@ -13,6 +13,15 @@ const AllToys = () => {
 		.then(data => setAllToys(data))
 	},[])
 
+
+	const handleSearch = () => {
+		fetch(`http://localhost:5000/ToySerchByName/${seachText}`)
+		.then(res => res.json())
+		.then(data => {
+			setAllToys(data);
+		})
+	}
+
 	return (
 		<div className="bg-gradient-to-r from-fuchsia-800 from-10% to-cyan-900 to-90% text-white font-bold">
 
@@ -23,7 +32,7 @@ const AllToys = () => {
 
 		<input onChange={(e) => setSearchText(e.target.value)} type="text" className="input input-bordered join-item text-black" placeholder="Search Toy name"/>
 
-		<button className="btn join-item rounded-r-full font-extrabold">Search</button>
+		<button onClick={handleSearch} className="btn join-item rounded-r-full font-extrabold">Search</button>
 
 		</div>
 

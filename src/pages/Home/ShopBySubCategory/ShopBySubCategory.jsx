@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import ShopBySubCategoryCard from "./ShopBySubCategoryCard";
 
 
-const ShopBySubCategory = () => {
+const ShopBySubCategory = ({AllToy}) => {
 	const [toys, setToys] = useState([]);
-	const [activeTab, setActiveTab] = useState('RegularCar')
+	const [activeTab, setActiveTab] = useState('jjj')
+
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/toysInfos/${activeTab}`)
+		fetch(`http://localhost:5000/toysDataInfos/${activeTab}`)
 		.then(res => res.json())
 		.then(result => {
 			setToys(result);
