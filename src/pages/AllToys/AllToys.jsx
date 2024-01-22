@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
 import { useNavigation } from "react-router-dom";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
 	const [AllToys, setAllToys] = useState([]);
 	const [seachText, setSearchText] = useState("");
+	useTitle('AllToys');
 
 	const url = `https://joy-with-toy-server.vercel.app/toysInfos`;
 

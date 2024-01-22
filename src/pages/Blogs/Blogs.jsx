@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const Blogs = () => {
+	useTitle('Blogs');
 	return (
 
 		<div className="min-h-screen bg-gradient-to-r from-sky-500 to-violet-700 text-white font-bold p-5 md:p-20 space-y-20">

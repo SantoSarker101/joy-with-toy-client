@@ -6,6 +6,7 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
 	const [show,setShow] = useState(false);
@@ -17,6 +18,7 @@ const Login = () => {
 	const location = useLocation();
 	console.log('Login Page Location', location);
 	const from = location?.state?.from?.pathname || '/';
+	useTitle('Login')
 
 	const googleProvider = new GoogleAuthProvider()
 

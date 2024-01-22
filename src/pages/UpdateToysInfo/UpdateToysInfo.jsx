@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import UpdatedToysFullInfos from './UpdatedToysFullInfos';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateToysInfo = () => {
   const updateToys = useLoaderData();
@@ -8,6 +9,7 @@ const UpdateToysInfo = () => {
   // Check if updateToys is an object, and convert it to an array if needed
 //   const toysArray = Array.isArray(updateToys) ? updateToys : [updateToys];
 	const myToysArray = Object.values(updateToys)
+  useTitle('UpdateToys')
 
   return (
     <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-12 lg:p-20'>

@@ -5,12 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 const SignUp = () => {
 
 	const {createUser} = useContext(AuthContext)
 	const [show,setShow] = useState(false);
 	const navigate = useNavigate();
+	useTitle('SignUp')
 
 	const handleSignUp = event => {
 		event.preventDefault();

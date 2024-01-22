@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import ViewDetailsCard from "./ViewDetailsCard";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import useTitle from "../../hooks/useTitle";
 
 const ViewDetails = () => {
 
 	const navigation = useNavigation();
 	console.log(navigation.state);
+	useTitle('ViewToyDetails')
 
 	if(navigation.state === 'loading'){
 		return <LoadingSpinner></LoadingSpinner>

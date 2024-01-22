@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 // import { useLoaderData } from 'react-router-dom';
 import BuyNowCard from "./BuyNowCard";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const BuyNow = () => {
 	const { user } = useContext(AuthContext);
 	const [byNowToyProducts, setByNowToyProducts] = useState([]);
+	useTitle('BuyNow')
 
 	const url = `https://joy-with-toy-server.vercel.app/BuyToysInfo?email=${user?.email}`;
 

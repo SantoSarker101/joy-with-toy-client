@@ -1,9 +1,11 @@
 import { Link, useRouteError } from "react-router-dom";
 import { BsEmojiTear } from "react-icons/bs";
+import useTitle from "../../hooks/useTitle";
 
 const ErrorPage = () => {
 	const {error,status} = useRouteError();
 	console.log(error.message,status);
+	useTitle('ErrorPage')
 	return (
 		<section className="flex justify-center items-center min-h-screen text-center md:p-10 p-5">
 
