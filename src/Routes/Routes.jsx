@@ -17,63 +17,80 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
 	{
-	path: "/",
-	element: <Main></Main>,
-	errorElement: <ErrorPage></ErrorPage>,
-	children: [
-		{
-			path: '/',
-			element: <Home></Home>,
-		},
-		{
-			path: 'login',
-			element: <Login></Login>,
-		},
-		{
-			path: 'signup',
-			element: <SignUp></SignUp>
-		},
-		{
-			path: 'AddAToy',
-			element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
-		},
-		{
-			path: 'MyToys',
-			element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
-		},
-		{
-			path: 'AllToys',
-			element: <AllToys></AllToys>
-		},
-		{
-			path: '/Blogs',
-			element: <Blogs></Blogs>
-		},
-		{
-			path: 'UpdateToysInfo/:id',
-			element: <UpdateToysInfo></UpdateToysInfo>,
-			loader: ({params}) => fetch(`http://localhost:5000/toysInfos/${params.id}`)
-		},
-		{
-			path: 'ShopBySubCategory',
-			element: <ShopBySubCategory></ShopBySubCategory>
-		},
-		{
-			path: 'ViewDetails/:id',
-			element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-			loader: ({params}) => fetch(`http://localhost:5000/toysInfos/${params.id}`)
-		},
-		{
-			path: 'BuyNow',
-			element: <BuyNow></BuyNow>
-		},
-		{
-			path: 'LoadingSpinner',
-			element: <LoadingSpinner></LoadingSpinner>
-		}
-
-	]
+		path: "/",
+		element: <Main></Main>,
+		errorElement: <ErrorPage></ErrorPage>,
+		children: [
+			{
+				path: "/",
+				element: <Home></Home>,
+			},
+			{
+				path: "login",
+				element: <Login></Login>,
+			},
+			{
+				path: "signup",
+				element: <SignUp></SignUp>,
+			},
+			{
+				path: "AddAToy",
+				element: (
+					<PrivateRoute>
+						<AddAToy></AddAToy>
+					</PrivateRoute>
+				),
+			},
+			{
+				path: "MyToys",
+				element: (
+					<PrivateRoute>
+						<MyToys></MyToys>
+					</PrivateRoute>
+				),
+			},
+			{
+				path: "AllToys",
+				element: <AllToys></AllToys>,
+			},
+			{
+				path: "/Blogs",
+				element: <Blogs></Blogs>,
+			},
+			{
+				path: "UpdateToysInfo/:id",
+				element: <UpdateToysInfo></UpdateToysInfo>,
+				loader: ({ params }) =>
+					fetch(
+						`https://joy-with-toy-server.vercel.app/toysInfos/${params.id}`
+					),
+			},
+			{
+				path: "ShopBySubCategory",
+				element: <ShopBySubCategory></ShopBySubCategory>,
+			},
+			{
+				path: "ViewDetails/:id",
+				element: (
+					<PrivateRoute>
+						<ViewDetails></ViewDetails>
+					</PrivateRoute>
+				),
+				loader: ({ params }) =>
+					fetch(
+						`https://joy-with-toy-server.vercel.app/toysInfos/${params.id}`
+					),
+			},
+			{
+				path: "BuyNow",
+				element: <BuyNow></BuyNow>,
+			},
+			{
+				path: "LoadingSpinner",
+				element: <LoadingSpinner></LoadingSpinner>,
+			},
+		],
 	},
-  ]);
+]);
 
-  export default router;
+export default router;

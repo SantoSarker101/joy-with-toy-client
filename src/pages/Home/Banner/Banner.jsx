@@ -18,7 +18,7 @@ const Banner = () => {
 
 					<h2 className='text-2xl'>Shop Curated Used Toys & Baby Gear</h2>
 					<p>New • Open Box • Quality Used</p>
-					<Link><button className="btn bg-white mt-4">Start Shopping</button></Link>
+					<Link to='/AllToys'><button className="btn bg-white mt-4">Start Shopping</button></Link>
 
 				</div>
 			</div>
@@ -43,7 +43,7 @@ const Banner = () => {
 
 					<h2 className='text-2xl'>Shop Curated Used Toys & Baby Gear</h2>
 					<p>New • Open Box • Quality Used</p>
-					<Link><button className="btn bg-white mt-4">Start Shopping</button></Link>
+					<Link to='/AllToys'><button className="btn bg-white mt-4">Start Shopping</button></Link>
 
 				</div>
 			</div>
@@ -66,7 +66,7 @@ const Banner = () => {
 
 					<h2 className='text-2xl'>Shop Curated Used Toys & Baby Gear</h2>
 					<p>New • Open Box • Quality Used</p>
-					<Link><button className="btn bg-white mt-4">Start Shopping</button></Link>
+					<Link to='/AllToys'><button className="btn bg-white mt-4">Start Shopping</button></Link>
 
 				</div>
 			</div>
@@ -89,7 +89,7 @@ const Banner = () => {
 
 					<h2 className='text-2xl'>Shop Curated Used Toys & Baby Gear</h2>
 					<p>New • Open Box • Quality Used</p>
-					<Link><button className="btn bg-white mt-4">Start Shopping</button></Link>
+					<Link to='/AllToys'><button className="btn bg-white mt-4">Start Shopping</button></Link>
 
 				</div>
 			</div>
