@@ -203,6 +203,7 @@ const UpdatedToysFullInfos = ({ updateToy }) => {
 								className="input input-bordered join-item w-full text-red-500 font-extrabold"
 								defaultValue={price}
 								placeholder="Price"
+								required
 							/>
 						</label>
 					</div>
@@ -244,6 +245,7 @@ const UpdatedToysFullInfos = ({ updateToy }) => {
 								className="input input-bordered join-item w-full text-red-500 font-extrabold"
 								defaultValue={availableQuantity}
 								placeholder="Available quantity"
+								required
 							/>
 						</label>
 					</div>
@@ -266,6 +268,7 @@ const UpdatedToysFullInfos = ({ updateToy }) => {
 								placeholder="Detail description"
 								defaultValue={detailsDescription}
 								className="textarea textarea-primary w-full text-red-500 font-extrabold"
+								required
 							></textarea>
 						</label>
 					</div>

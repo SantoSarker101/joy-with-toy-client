@@ -12,13 +12,15 @@ const Main = () => {
 
 			<div>
 				<div className='mx-auto'>
-					<div className="bg-red-500 flex mx-auto w-full text-center text-white font-bold py-1 px-3">
+					<div className="bg-red-500 flex mx-auto w-full text-center text-white font-bold py-1 px-3 justify-center items-center">
+
 						<p>Get $5 to Spend </p>
-						<span className='ml-3'><FaArrowRight/></span>
+						<span className='ml-3 text-center'><FaArrowRight/></span>
+
 					</div>
 
-					<div className='flex bg-slate-100 text-dark font-bold p-3 border-y-2'>
-						<p>20% OFF FestivalSALE </p>
+					<div className='flex bg-slate-100 text-dark font-bold p-3 border-y-2 justify-center items-center'>
+						<p>20% OFF Festival SALE </p>
 						<span className='ml-3'><FaArrowRight/></span>
 					</div>
 				</div>

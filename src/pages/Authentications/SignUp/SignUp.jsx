@@ -11,6 +11,7 @@ const SignUp = () => {
 
 	const {createUser} = useContext(AuthContext)
 	const [show,setShow] = useState(false);
+	const [error,setError] = useState('');
 	const navigate = useNavigate();
 	useTitle('SignUp')
 
@@ -23,6 +24,12 @@ const SignUp = () => {
 		const photo = form.photo.value;
 		console.log(name,email,password,photo);
 
+		setError('');
+
+		if(password.length < 6){
+			setError('Password Must Be 6 Characters of Longer');
+		}
+
 		createUser(email, password)
 		.then(result => {
 			const user = result.user;
@@ -30,8 +37,12 @@ const SignUp = () => {
 			navigate('/');
 			toast("Congratulations your account has been created")
 			updateUserData(user,name,photo)
+			setError('');
 		})
-		.catch(error => console.log(error))
+		.catch(error => {
+			console.log(error);
+			setError(error.message);
+		})
 	}
 
 	const updateUserData = (user,name,photo) => {
@@ -99,6 +110,8 @@ const SignUp = () => {
 						show ? <span>Hide Password</span> : <span>Show Password</span>
 					}
 				</small></p>
+
+					<p className='text-red-600' >{error}</p>
 
 				</div>
 

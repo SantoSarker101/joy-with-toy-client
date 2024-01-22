@@ -10,6 +10,7 @@ import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
 	const [show,setShow] = useState(false);
+	const [error,setError] = useState('');
 
 	const {signIn,googlePop,passwordReset} = useContext(AuthContext)
 	const emailRef = useRef();
@@ -49,7 +50,10 @@ const Login = () => {
 			navigate(from, {replace: true})
 			toast("Congratulations You Have Login Successfully!")
 		})
-		.catch(error => console.log(error));
+		.catch(error => {
+			console.log(error);
+			setError(error.message);
+		});
 	}
 
 	const handleResetPassword = () => {
@@ -115,14 +119,16 @@ const Login = () => {
 				<input type={show ? 'text' : 'password'}  name='password' placeholder="password" className="input input-bordered" required />
 
 				<div className='flex justify-between'>
-				<p><small onClick={() => setShow(!show)} className='cursor-pointer'>
+				<p><small onClick={() => setShow(!show)} className='cursor-pointer font-bold'>
 					{
 						show ? <span>Hide Password</span> : <span>Show Password</span>
 					}
 				</small></p>
 
-					<p><small onClick={handleResetPassword} className='cursor-pointer'>Forget Password?</small></p>
+					<p className='font-bold'><small onClick={handleResetPassword} className='cursor-pointer'>Forget Password?</small></p>
 				</div>
+
+				<p className='text-red-600 font-bold mt-5'>{error}</p>
 
 				</div>
 

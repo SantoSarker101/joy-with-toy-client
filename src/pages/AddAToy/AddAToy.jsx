@@ -79,6 +79,7 @@ const AddAToy = () => {
 								name="toyPhoto"
 								className="input input-bordered join-item w-full"
 								placeholder="Photo URL of the toy"
+								required
 							/>
 						</label>
 					</div>
@@ -96,6 +97,7 @@ const AddAToy = () => {
 								name="toyName"
 								className="input input-bordered join-item w-full"
 								placeholder="Toy Name"
+								required
 							/>
 						</label>
 					</div>
@@ -119,6 +121,7 @@ const AddAToy = () => {
 								className="input input-bordered join-item w-full"
 								readOnly
 								placeholder="Seller Name"
+								required
 							/>
 						</label>
 					</div>
@@ -138,6 +141,7 @@ const AddAToy = () => {
 								className="input input-bordered join-item w-full"
 								readOnly
 								placeholder="Seller Email"
+								required
 							/>
 						</label>
 					</div>
@@ -158,6 +162,7 @@ const AddAToy = () => {
 								className="select w-full text-base"
 								name="subCategory"
 								defaultValue="select a sub-category"
+								required
 							>
 								<option disabled value="select a sub-category">
 									select a sub-category
@@ -187,6 +192,7 @@ const AddAToy = () => {
 								name="price"
 								className="input input-bordered join-item w-full"
 								placeholder="Price"
+								required
 							/>
 						</label>
 					</div>
@@ -208,6 +214,7 @@ const AddAToy = () => {
 								name="rating"
 								className="input input-bordered join-item w-full"
 								placeholder="Rating"
+								required
 							/>
 						</label>
 					</div>
@@ -225,6 +232,7 @@ const AddAToy = () => {
 								name="availableQuantity"
 								className="input input-bordered join-item w-full"
 								placeholder="Available quantity"
+								required
 							/>
 						</label>
 					</div>
@@ -246,6 +254,7 @@ const AddAToy = () => {
 								name="detailsDescription"
 								placeholder="Detail description"
 								className="textarea textarea-primary w-full"
+								required
 							></textarea>
 						</label>
 					</div>
