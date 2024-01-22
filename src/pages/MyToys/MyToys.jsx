@@ -14,7 +14,7 @@ const MyToys = () => {
 		.then(data => setMyToys(data))
 	},[])
 	return (
-	<div className="bg-gradient-to-r from-violet-700 from-10% to-green-900 to-90% text-white font-bold">
+	<div className="bg-gradient-to-r from-violet-700 from-10% to-green-900 to-90% text-white font-bold min-h-screen">
 
 		<h1 className="text-3xl text-center pt-10 mb-8">My Toys</h1>
 

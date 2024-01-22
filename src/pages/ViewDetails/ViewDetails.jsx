@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import ViewDetailsCard from "./ViewDetailsCard";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const ViewDetails = () => {
-	const [viewToyDetailsDatas,setViewToyDetailsDatas] = useState([]);
+
+	const navigation = useNavigation();
+	console.log(navigation.state);
+
+	if(navigation.state === 'loading'){
+		return <LoadingSpinner></LoadingSpinner>
+	}
+
 	const ViewDetail = useLoaderData();
 
 	const ViewDetailsDatas = Object.values(ViewDetail)
+
+
 
 	return (
 		<div>

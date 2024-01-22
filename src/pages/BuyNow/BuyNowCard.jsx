@@ -3,7 +3,7 @@ import '@smastrom/react-rating/style.css'
 import Swal from 'sweetalert2';
 
 const BuyNowCard = ({BuyProduct,byNowToyProducts,setByNowToyProducts}) => {
-	const {toyPhoto,toyName,sellerName,email,subCategory,price,rating,availableQuantity,detailsDescription,_id} = BuyProduct
+	const {toyPhoto,toyName,price,rating,_id} = BuyProduct
 
 	const handleDeleteBuyProduct = _id => {
 		console.log(_id);

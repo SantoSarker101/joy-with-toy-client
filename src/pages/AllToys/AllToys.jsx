@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const AllToys = () => {
 	const [AllToys, setAllToys] = useState([]);
@@ -22,8 +24,16 @@ const AllToys = () => {
 		})
 	}
 
+	const navigation = useNavigation();
+	console.log(navigation.state);
+
+	if(navigation.state === 'loading'){
+		return <LoadingSpinner></LoadingSpinner>
+	}
+
+
 	return (
-		<div className="bg-gradient-to-r from-fuchsia-800 from-10% to-cyan-900 to-90% text-white font-bold">
+		<div className="bg-gradient-to-r from-fuchsia-800 from-10% to-cyan-900 to-90% text-white font-bold min-h-screen">
 
 
 		<h1 className="text-center pt-12 mb-8 text-3xl">All Toys</h1>

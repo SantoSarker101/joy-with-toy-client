@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
 	const [show,setShow] = useState(false);
@@ -25,6 +26,7 @@ const Login = () => {
 			const user = result.user;
 			console.log(user);
 			navigate(from, {replace: true})
+			toast("Congratulations You Have Login Successfully!")
 		})
 		.catch(error => {
 			console.log(error);
@@ -43,6 +45,7 @@ const Login = () => {
 			const user = result.user;
 			console.log(user);
 			navigate(from, {replace: true})
+			toast("Congratulations You Have Login Successfully!")
 		})
 		.catch(error => console.log(error));
 	}

@@ -4,6 +4,7 @@ import signup from '../../../assets/animation/signup.json'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -25,6 +26,7 @@ const SignUp = () => {
 			const user = result.user;
 			console.log(user);
 			navigate('/');
+			toast("Congratulations your account has been created")
 			updateUserData(user,name,photo)
 		})
 		.catch(error => console.log(error))

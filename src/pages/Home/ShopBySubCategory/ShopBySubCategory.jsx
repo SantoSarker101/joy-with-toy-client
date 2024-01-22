@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import ShopBySubCategoryCard from "./ShopBySubCategoryCard";
+import { useNavigation } from "react-router-dom";
+import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 
 
 const ShopBySubCategory = ({AllToy}) => {
@@ -23,6 +25,15 @@ const ShopBySubCategory = ({AllToy}) => {
 	const handleTabClick = (tabName) => {
 		setActiveTab(tabName);
 	}
+
+
+	const navigation = useNavigation();
+	console.log(navigation.state);
+
+	if(navigation.state === 'loading'){
+		return <LoadingSpinner></LoadingSpinner>
+	}
+
 	return (
 		<div>
 			<h1 className="text-3xl text-center font-extrabold">Shop By Category</h1>

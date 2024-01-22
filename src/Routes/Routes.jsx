@@ -12,11 +12,14 @@ import UpdateToysInfo from "../pages/UpdateToysInfo/UpdateToysInfo";
 import ShopBySubCategory from "../pages/Home/ShopBySubCategory/ShopBySubCategory";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import BuyNow from "../pages/BuyNow/BuyNow";
+import LoadingSpinner from "../pages/LoadingSpinner/LoadingSpinner";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
 	{
 	path: "/",
 	element: <Main></Main>,
+	errorElement: <ErrorPage></ErrorPage>,
 	children: [
 		{
 			path: '/',
@@ -63,6 +66,10 @@ const router = createBrowserRouter([
 		{
 			path: 'BuyNow',
 			element: <BuyNow></BuyNow>
+		},
+		{
+			path: 'LoadingSpinner',
+			element: <LoadingSpinner></LoadingSpinner>
 		}
 
 	]

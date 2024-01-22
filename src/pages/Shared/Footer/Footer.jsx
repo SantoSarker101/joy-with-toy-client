@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<div className='font-bold'>
+		<div className='font-bold border-t-gray-300 border'>
       <footer className="footer p-10 bg-base-100 text-base-content">
 
 <nav>
@@ -28,7 +29,9 @@ const Footer = () => {
 
 
 <nav>
-  <h1 className='text-3xl font-extrabold text-red-500'>Joy With Toy</h1>
+  <Link to='/'>
+    <h1 className='text-3xl font-extrabold text-red-500'>Joy With Toy</h1>
+  </Link>
   <header className="footer-title font-extrabold">Social</header>
 
   <div className="grid grid-flow-col gap-4">
@@ -50,7 +53,7 @@ const Footer = () => {
 
 
     <div className='bg-base-200'>
-    <hr className='border border-gray-950' />
+    <hr className='border border-gray-400' />
     <p className='text-center text-sm text-lime-700 p-10'>
       &copy; 2024 American Specialty Toy Retailing Association. All rights reserved.
     </p>
